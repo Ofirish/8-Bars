@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", "Avenir Next", "Segoe UI", sans-serif;
+  --font-display: "Fraunces", "Iowan Old Style", Palatino, Georgia, serif;
+  --color-bg: #1a2230;
+  --color-ink: #14181f;
+  --color-ivory: #f4efe6;
+  --color-muted: #b7b0a4;
+  --color-sodium: #e6a24a;
+  --color-opera: #c4373a;
+  --color-mint: #6fbfa0;
+  --color-parquet: #c4a574;
+  --color-surface: #243044;
+  --color-line: #3c4a60;
+  --radius: 0.75rem;
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  html,
+  body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    background: var(--color-bg);
+    color: var(--color-ivory);
+    font-family: var(--font-sans);
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+.game-root {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  background: var(--color-bg);
+}
+
+.game-root button {
+  touch-action: manipulation;
+}
+
+.game-root [data-scroll] {
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
+}
