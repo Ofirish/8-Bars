@@ -6,3 +6,5 @@ node_modules
 .grok
 .project_id
 screenshots
+dist
+.output
